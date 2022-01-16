@@ -159,3 +159,5 @@ media/
 
 # Node.js
 node_modules/
+
+postgres_data/
