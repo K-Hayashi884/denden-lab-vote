@@ -5,7 +5,6 @@
 - Django
 - django-environ
 - django-sass-processor[management-command]
-- dj-database-url
 - libsass
 - psycopg2-binary
 - python-dotenv
