@@ -1,0 +1,325 @@
+[
+  {
+    "model": "vote_site.lab",
+    "pk": 1,
+    "fields": {
+      "name": "先端電気システム論研究室（引原）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 2,
+    "fields": {
+      "name": "自動制御工学研究室（萩原）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 3,
+    "fields": {
+      "name": "システム創成論研究室（阪本）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 4,
+    "fields": {
+      "name": "複合システム論研究室（土居）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 5,
+    "fields": {
+      "name": "生体機能工学研究室（小林）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 6,
+    "fields": {"name": "超伝導工学研究室（雨宮）", "belongs_to": "Engineering", "campus": "Katsura"}
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 7,
+    "fields": {
+      "name": "電磁回路工学研究室（和田）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 8,
+    "fields": {
+      "name": "電磁エネルギー工学研究室（松尾）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 9,
+    "fields": {"name": "宇宙電波工学研究室（小嶋）", "belongs_to": "Humanosphere", "campus": "Uji"}
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 10,
+    "fields": {
+      "name": "マイクロ波エネルギー伝送研究室（篠原）",
+      "belongs_to": "Humanosphere",
+      "campus": "Uji"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 11,
+    "fields": {
+      "name": "電波科学シミュレーション研究室（大村）",
+      "belongs_to": "Humanosphere",
+      "campus": "Uji"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 12,
+    "fields": {
+      "name": "リモートセンシング工学研究室（山本衛）",
+      "belongs_to": "Humanosphere",
+      "campus": "Uji"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 13,
+    "fields": {"name": "地球大気計測研究室（橋口）", "belongs_to": "Engineering", "campus": "Uji"}
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 14,
+    "fields": {"name": "複合メディア研究室（中村裕一）", "belongs_to": "Media", "campus": "Yoshida"}
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 15,
+    "fields": {
+      "name": "集積機能工学研究室（掛谷）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 16,
+    "fields": {
+      "name": "極微電子工学研究室（白石）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 17,
+    "fields": {
+      "name": "応用量子物性研究室（竹内）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 18,
+    "fields": {
+      "name": "半導体物性工学研究室（木本）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 19,
+    "fields": {
+      "name": "電子材料物性工学研究室（山田）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 20,
+    "fields": {
+      "name": "光材料物性工学研究室（川上）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 21,
+    "fields": {
+      "name": "光量子電子工学研究室（野田）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 22,
+    "fields": {
+      "name": "量子電磁工学研究室（杉山）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 23,
+    "fields": {
+      "name": "ナノプロセス工学研究室（De Zoysa）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 24,
+    "fields": {
+      "name": "先進電子材料研究室（金子）",
+      "belongs_to": "Engineering",
+      "campus": "Katsura"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 25,
+    "fields": {
+      "name": "言語メディア研究室（黒橋）",
+      "belongs_to": "Informatics",
+      "campus": "Yoshida"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 26,
+    "fields": {
+      "name": "画像メディア研究室（西野）",
+      "belongs_to": "Informatics",
+      "campus": "Yoshida"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 27,
+    "fields": {
+      "name": "ディジタル通信研究室（原田）",
+      "belongs_to": "Informatics",
+      "campus": "Yoshida"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 28,
+    "fields": {
+      "name": "伝送メディア研究室（山本高）",
+      "belongs_to": "Informatics",
+      "campus": "Yoshida"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 29,
+    "fields": {"name": "知的通信網研究室（大木）", "belongs_to": "Informatics", "campus": "Yoshida"}
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 30,
+    "fields": {
+      "name": "情報回路方式研究室（佐藤高）",
+      "belongs_to": "Informatics",
+      "campus": "Yoshida"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 31,
+    "fields": {"name": "論理生命学研究室（石井）", "belongs_to": "Informatics", "campus": "Yoshida"}
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 32,
+    "fields": {"name": "医用工学研究室（松田哲）", "belongs_to": "Informatics", "campus": "Yoshida"}
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 33,
+    "fields": {
+      "name": "エネルギー情報学研究室（下田）",
+      "belongs_to": "Energy",
+      "campus": "Yoshida"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 34,
+    "fields": {
+      "name": "電磁エネルギー学研究室（中村祐司）",
+      "belongs_to": "Energy",
+      "campus": "Uji"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 35,
+    "fields": {
+      "name": "エネルギー応用基礎学研究室（土井）",
+      "belongs_to": "Energy",
+      "campus": "Yoshida"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 36,
+    "fields": {
+      "name": "プロセスエネルギー学研究室（白井）",
+      "belongs_to": "Energy",
+      "campus": "Yoshida"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 37,
+    "fields": {
+      "name": "プラズマエネルギー変換研究室（長﨑）",
+      "belongs_to": "Advanced Energy",
+      "campus": "Uji"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 38,
+    "fields": {
+      "name": "高温プラズマ物性研究室（南）",
+      "belongs_to": "Advanced Energy",
+      "campus": "Uji"
+    }
+  },
+  {
+    "model": "vote_site.lab",
+    "pk": 39,
+    "fields": {
+      "name": "エネルギー光物性研究室（松田一）",
+      "belongs_to": "Advanced Energy",
+      "campus": "Uji"
+    }
+  }
+]
