@@ -1,10 +1,9 @@
 import datetime
 
-from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-class User(AbstractUser):
+class Vote(models.Model):
     YEAR_CHOICES = [
         (r, r)
         for r in range(
@@ -16,25 +15,25 @@ class User(AbstractUser):
     ]
 
     vote1 = models.ForeignKey(
-        "Lab", on_delete=models.CASCADE, related_name="voter1", null=True, blank=True
+        "Lab", on_delete=models.CASCADE, related_name="vote1", null=True, blank=True
     )
     vote2 = models.ForeignKey(
-        "Lab", on_delete=models.CASCADE, related_name="voter2", null=True, blank=True
+        "Lab", on_delete=models.CASCADE, related_name="vote2", null=True, blank=True
     )
     vote3 = models.ForeignKey(
-        "Lab", on_delete=models.CASCADE, related_name="voter3", null=True, blank=True
+        "Lab", on_delete=models.CASCADE, related_name="vote3", null=True, blank=True
     )
     vote4 = models.ForeignKey(
-        "Lab", on_delete=models.CASCADE, related_name="voter4", null=True, blank=True
+        "Lab", on_delete=models.CASCADE, related_name="vote4", null=True, blank=True
     )
     vote5 = models.ForeignKey(
-        "Lab", on_delete=models.CASCADE, related_name="voter5", null=True, blank=True
+        "Lab", on_delete=models.CASCADE, related_name="vote5", null=True, blank=True
     )
     vote6 = models.ForeignKey(
-        "Lab", on_delete=models.CASCADE, related_name="voter6", null=True, blank=True
+        "Lab", on_delete=models.CASCADE, related_name="vote6", null=True, blank=True
     )
     vote7 = models.ForeignKey(
-        "Lab", on_delete=models.CASCADE, related_name="voter7", null=True, blank=True
+        "Lab", on_delete=models.CASCADE, related_name="vote7", null=True, blank=True
     )
 
     year = models.IntegerField(
@@ -43,6 +42,10 @@ class User(AbstractUser):
         if datetime.date.today().month > 3
         else datetime.date.today().year,
     )  # 配属予定年度
+
+    email = models.EmailField(max_length=50)
+
+    is_active = models.BooleanField(default=False)
 
 
 class Lab(models.Model):

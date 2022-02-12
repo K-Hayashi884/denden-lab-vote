@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load static sass_tags %}
+{% block content %}
+    {% for object in object_list %}
+    <li>{{ object.name }}</li>
+    {% endfor %}
+{% endblock content %}

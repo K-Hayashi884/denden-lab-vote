@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 
-import environ
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,8 +16,6 @@ SECRET_KEY = os.getenv(
 DEBUG = bool(os.getenv("DEBUG", False))
 
 ALLOWED_HOSTS = [s.strip() for s in os.getenv("ALLOWED_HOSTS", "").split(",") if s]
-
-AUTH_USER_MODEL = "vote_site.User"
 
 # Application definition
 
@@ -64,15 +61,12 @@ TEMPLATES = [
 WSGI_APPLICATION = "denden_lab_vote.wsgi.application"
 
 # Database
-
-env = environ.Env()
-env.read_env(os.path.join(BASE_DIR, ".env"))
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("POSTGRES_DB"),
-        "USER": env("POSTGRES_USER"),
-        "PASSWORD": env("POSTGRES_PASSWORD"),
+        "NAME": os.getenv("POSTGRES_DB"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
         "HOST": "db",
         "PORT": 5432,
     }
@@ -158,5 +152,14 @@ LOGGING = {
 }
 
 # SASS Processor
-
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, "static")
+SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r"^.+\.(sass|scss)$"
+SASS_PRECISION = 8
 SASS_OUTPUT_STYLE = "compressed"
+SASS_TEMPLATE_EXTS = [".html", ".haml"]
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "denden.lab.vote@gmail.com"
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
+EMAIL_USE_TLS = True
