@@ -24,9 +24,15 @@ dj-database-url==0.5.0 \
 django-appconf==1.0.5; python_version >= "3.6" \
     --hash=sha256:be3db0be6c81fa84742000b89a81c016d70ae66a7ccb620cdef592b1f1a6aaa4 \
     --hash=sha256:ae9f864ee1958c815a965ed63b3fba4874eec13de10236ba063a788f9a17389d
+django-bootstrap3==21.2; python_version >= "3.7" \
+    --hash=sha256:9a7e95a053455c15cdcbc5dc7f9261f9aecf01d0558435b59e7b364765f2c3e2 \
+    --hash=sha256:845a53e0f68fd520e3df6d53686a641e5008329e492687e225a0c394941dd430
 django-compressor==3.1 \
     --hash=sha256:89f7ba86777b30672c2f9c7557bf2aff87c5890903c73b1fa3ae38acd143e855 \
     --hash=sha256:c4a87bf65f9a534cfaf1c321a000a229c24e50c6d62ba6ab089482db42e819d9
+django-debug-toolbar==3.2.4; python_version >= "3.6" \
+    --hash=sha256:644bbd5c428d3283aa9115722471769cac1bec189edf3a0c855fd8ff870375a9 \
+    --hash=sha256:6b633b6cfee24f232d73569870f19aa86c819d750e7f3e833f2344a9eb4b4409
 django-environ==0.8.1; python_version >= "3.4" and python_version < "4" \
     --hash=sha256:6f0bc902b43891656b20486938cba0861dc62892784a44919170719572a534cb \
     --hash=sha256:42593bee519a527602a467c7b682aee1a051c2597f98c45f4f4f44169ecdb6e5

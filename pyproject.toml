@@ -22,7 +22,9 @@ version = "0.1.0"
 [tool.poetry.dependencies]
 Django = "^4.0.1"
 dj-database-url = "^0.5.0"
+django-bootstrap3 = "^21.2"
 django-compressor = "^3.1"
+django-debug-toolbar = "^3.2.4"
 django-environ = "^0.8.1"
 django-sass-processor = {extras = ["management-command"], version = "^1.1"}
 libsass = "^0.21.0"

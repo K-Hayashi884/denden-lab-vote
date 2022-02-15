@@ -17,7 +17,7 @@ class VoteForm(forms.ModelForm):
             "year",
             "email",
         ]
-        help_texts = {
+        labels = {
             "vote1": "第１志望",
             "vote2": "第２志望",
             "vote3": "第３志望",
@@ -30,7 +30,26 @@ class VoteForm(forms.ModelForm):
         }
 
     def clean_email(self):
+        # メールアドレスのvalidation
         email = self.cleaned_data.get("email")
         if "@st.kyoto-u.ac.jp" not in email:
             raise forms.ValidationError("st.kyoto-u.ac.jpドメインのKUMOIメールを入力してください")
         return email
+
+    def clean(self):
+        # 重複した投票がないかのvalidation
+        cleaned_data = super().clean()
+        votes = [
+            cleaned_data.get("vote1"),
+            cleaned_data.get("vote2"),
+            cleaned_data.get("vote3"),
+            cleaned_data.get("vote4"),
+            cleaned_data.get("vote5"),
+            cleaned_data.get("vote6"),
+            cleaned_data.get("vote7"),
+        ]
+        print(votes)
+        print(set(votes))
+        if len(votes) != len(set(votes)):
+            raise forms.ValidationError("重複した投票が存在します")
+        return cleaned_data
