@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "policy.css",
+	"sources": [
+		"policy.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,EAAE,AAAC,CACD,aAAa,CAAE,IAAI,CACnB,UAAU,CAAE,IAAI,CACjB"
+}

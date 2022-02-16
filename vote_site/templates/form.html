@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static sass_tags %}
+{% load bootstrap3 %}
+{% block style %}
+<link rel="stylesheet" href="{% sass_src 'vote_site/css/form.scss' %}" />
+{% endblock style %}
+{% block navbar %}
+<li class="nav-item">
+    <a class="nav-link" href="{% url 'list' %}">集計</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="{% url 'form' %}">投票</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link" href="{% url 'policy' %}">サイトポリシー</a>
+</li>
+{% endblock navbar %}
+{% block content %}
+<div class="content__wrapper">
+<form method="post">{% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">登録</button>
+    {% endbuttons %}
+</form>
+<p>入力したメールアドレスに既存の投票が存在すれば、メール確認後に上書きします。</p>
+</div>
+{% endblock content %}

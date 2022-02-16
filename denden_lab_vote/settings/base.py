@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 
-import environ
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -28,6 +27,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "sass_processor",
+    "vote_site",
+    "bootstrap3",
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -38,6 +40,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = "denden_lab_vote.urls"
@@ -61,15 +64,12 @@ TEMPLATES = [
 WSGI_APPLICATION = "denden_lab_vote.wsgi.application"
 
 # Database
-
-env = environ.Env()
-env.read_env(os.path.join(BASE_DIR, ".env"))
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": env("POSTGRES_DB"),
-        "USER": env("POSTGRES_USER"),
-        "PASSWORD": env("POSTGRES_PASSWORD"),
+        "NAME": os.getenv("POSTGRES_DB"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
         "HOST": "db",
         "PORT": 5432,
     }
@@ -93,9 +93,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "ja"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Asia/Tokyo"
 
 USE_I18N = True
 
@@ -155,5 +155,20 @@ LOGGING = {
 }
 
 # SASS Processor
-
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, "static")
+SASS_PROCESSOR_INCLUDE_FILE_PATTERN = r"^.+\.(sass|scss)$"
+SASS_PRECISION = 8
 SASS_OUTPUT_STYLE = "compressed"
+SASS_TEMPLATE_EXTS = [".html", ".haml"]
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "denden.lab.vote@gmail.com"
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
+EMAIL_USE_TLS = True
+
+INTERNAL_IPS = ["127.0.0.1"]
+
+DEBUG_TOOLBAR_CONFIG = {
+    "SHOW_TOOLBAR_CALLBACK": lambda request: True,
+}
