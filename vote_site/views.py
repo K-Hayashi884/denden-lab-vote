@@ -66,7 +66,7 @@ class VoteFormView(FormView):
         activate_url = "https://" + domain + reverse_lazy("vote_complete", args=[dumps(vote.pk)])
         send_mail(
             subject="研究室意向投票の確認",
-            message=f"まだ投票は完了していません。以下のURLにアクセスして投票を有効にしてください。\n{activate_url}",
+            message=f"まだ投票は完了していません。以下のURLにアクセスして投票を有効にしてください。リンクの有効期限は１日です。\n{activate_url}",
             from_email="denden.lab.vote@gmail.com",
             recipient_list=[email],
         )
