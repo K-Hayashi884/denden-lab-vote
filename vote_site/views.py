@@ -8,6 +8,7 @@ from django.views.generic import FormView, ListView, TemplateView
 from .forms import VoteForm
 from .models import Lab, Vote
 
+import datetime
 
 class LabListView(ListView):
     template_name = "lab_list.html"
@@ -15,16 +16,19 @@ class LabListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["years"] = Vote.objects.distinct().values_list("year", flat=True)
+        context["years"] = Vote.objects.distinct().values_list("year", flat=True) if Vote.objects.exists() else [datetime.date.today().year]
         context["selected_year"] = int(self.request.GET.get("year", max(context["years"])))
         return context
 
     def get_queryset(self, **kwargs):
         queryset = super().get_queryset(**kwargs)
 
-        year = self.request.GET.get(
-            "year", max(Vote.objects.distinct().values_list("year", flat=True))
-        )
+        if Vote.objects.exists():
+            year = self.request.GET.get(
+                "year", max(Vote.objects.distinct().values_list("year", flat=True))
+            )
+        else:
+            year = datetime.date.today().year
 
         order_by = self.request.GET.get("orderby", "belongs_to")
 
@@ -58,7 +62,7 @@ class VoteFormView(FormView):
         email = form.cleaned_data["email"]
         activate_url = reverse_lazy("vote_complete", args=[dumps(vote.pk)])
         send_mail(
-            subject="研究室以降投票の確認",
+            subject="研究室意向投票の確認",
             message=f"まだ投票は完了していません。以下のURLにアクセスして投票を有効にしてください。\n{activate_url}",
             from_email="denden.lab.vote@gmail.com",
             recipient_list=[email],
