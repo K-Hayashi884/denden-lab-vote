@@ -34,13 +34,13 @@ class LabListView(ListView):
         order_by = self.request.GET.get("orderby", "belongs_to")
 
         queryset = queryset.annotate(
-            vote1_cnt=Count("vote1", filter=Q(vote1__is_active=True, vote1__year=year)),
-            vote2_cnt=Count("vote2", filter=Q(vote2__is_active=True, vote2__year=year)),
-            vote3_cnt=Count("vote3", filter=Q(vote3__is_active=True, vote3__year=year)),
-            vote4_cnt=Count("vote4", filter=Q(vote4__is_active=True, vote4__year=year)),
-            vote5_cnt=Count("vote5", filter=Q(vote5__is_active=True, vote5__year=year)),
-            vote6_cnt=Count("vote6", filter=Q(vote6__is_active=True, vote6__year=year)),
-            vote7_cnt=Count("vote7", filter=Q(vote7__is_active=True, vote7__year=year)),
+            vote1_cnt=Count("vote1", filter=Q(vote1__is_active=True, vote1__year=year), distinct=True),
+            vote2_cnt=Count("vote2", filter=Q(vote2__is_active=True, vote2__year=year), distinct=True),
+            vote3_cnt=Count("vote3", filter=Q(vote3__is_active=True, vote3__year=year), distinct=True),
+            vote4_cnt=Count("vote4", filter=Q(vote4__is_active=True, vote4__year=year), distinct=True),
+            vote5_cnt=Count("vote5", filter=Q(vote5__is_active=True, vote5__year=year), distinct=True),
+            vote6_cnt=Count("vote6", filter=Q(vote6__is_active=True, vote6__year=year), distinct=True),
+            vote7_cnt=Count("vote7", filter=Q(vote7__is_active=True, vote7__year=year), distinct=True),
             total_cnt=F("vote1_cnt")
             + F("vote2_cnt")  # noqa: W503
             + F("vote3_cnt")  # noqa: W503
