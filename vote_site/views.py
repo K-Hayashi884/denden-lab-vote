@@ -4,6 +4,7 @@ from django.db.models import Count, F, Q
 from django.http import Http404, HttpResponseBadRequest
 from django.urls import reverse_lazy
 from django.views.generic import FormView, ListView, TemplateView
+from django.contrib.sites.shortcuts import get_current_site
 
 from .forms import VoteForm
 from .models import Lab, Vote
@@ -60,7 +61,9 @@ class VoteFormView(FormView):
     def form_valid(self, form):
         vote = form.save()
         email = form.cleaned_data["email"]
-        activate_url = reverse_lazy("vote_complete", args=[dumps(vote.pk)])
+        current_site = get_current_site(self.request)
+        domain = current_site.domain
+        activate_url = "https://" + domain + reverse_lazy("vote_complete", args=[dumps(vote.pk)])
         send_mail(
             subject="研究室意向投票の確認",
             message=f"まだ投票は完了していません。以下のURLにアクセスして投票を有効にしてください。\n{activate_url}",
@@ -100,7 +103,8 @@ class VoteCompleteView(TemplateView):
             else:
                 if not vote.is_active:
                     # 既に同一メールアドレスのものが存在していれば削除して上書き
-                    Vote.objects.filter(email=vote.email).exclude(pk=pk).delete()
+                    if Vote.objects.filter(email=vote.email).exclude(pk=pk).exists():
+                        Vote.objects.filter(email=vote.email).exclude(pk=pk).delete()
                     vote.is_active = True
                     vote.save()
                     return super().get(request, **kwargs)

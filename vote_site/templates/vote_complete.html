@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static sass_tags %}
 {% block content %}
-<div class="content_wrapper">投票を完了しました。</div>
+<div class="content__wrapper">
+投票を完了しました。
 <a href="{% url 'list' %}">集計ページへ</a>
+</div>
 {% endblock content %}
