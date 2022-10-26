@@ -8,3 +8,6 @@ try:
     from .local import *  # noqa: F401,F403
 except ImportError:
     pass
+
+INSTALLED_APPS += ["debug_toolbar",]
+MIDDLEWARE += ["debug_toolbar.middleware.DebugToolbarMiddleware",]

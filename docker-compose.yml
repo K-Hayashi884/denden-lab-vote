@@ -17,7 +17,7 @@ services:
       retries: 5
   web:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000 --settings=denden_lab_vote.settings.prod
     volumes:
       - .:/app
     ports:
@@ -25,6 +25,18 @@ services:
     depends_on:
       db:
         condition: service_healthy
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - '80:80'
+      - '443:443'
+    environment:
+      DOMAINS: 'denden-lab-vote.tk -> http://nginx:8080'
+      STAGE: 'production'
+    depends_on:
+      - nginx
+    volumes:
+      - /var/lib/ssl_certs:/var/lib/https-portal
   nginx:
     image: nginx:latest
     volumes:
@@ -32,6 +44,6 @@ services:
       - ./media:/media
       - ./nginx:/etc/nginx/conf.d
     ports:
-      - 80:80
+      - 8080:8080
     depends_on:
       - web
