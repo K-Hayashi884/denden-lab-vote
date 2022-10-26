@@ -1,1 +1,11 @@
-.form-select{width:256px;margin-bottom:24px}#list__year-form{margin-top:24px}.list__orderby_button{font-weight:bold;color:#4c6f8f}
+.form-select {
+  width: 256px;
+  margin-bottom: 24px;
+}
+#list__year-form {
+  margin-top: 24px;
+}
+.list__orderby_button {
+  font-weight: bold;
+  color: #4c6f8f;
+}
