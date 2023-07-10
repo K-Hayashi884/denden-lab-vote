@@ -1,5 +1,5 @@
 # denden-lab-vote
-[京都大学工学部電気電子工学科の研究室配属の投票意向調査サイト](https://denden-lab-vote.tk/)です
+[京都大学工学部電気電子工学科の研究室配属の投票意向調査サイト](https://denden-lab-vote.net/)です
 
 # 依存パッケージ
 - Django
